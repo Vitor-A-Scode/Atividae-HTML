@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BDN Brasil</title>
+    <link rel="icon" type="img/x-icon" href="/icons/jornal.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+        }
+
+        .content {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .highlight {
+            background: #ffeb3b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .date {
+            font-style: italic;
+            color: #555;
+        }
+
+        blockquote {
+            border-left: 4px solid #333;
+            padding-left: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+
+        .zebra-table {
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><abbr title="Bom Dia News">BDN</abbr> BRASIL</h1>
+    </header>
+
+    <nav>
+        <a href="#politica">Política</a>
+        <a href="#esportes">Esportes</a>
+        <a href="#entretenimento">Entretenimento</a>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section id="politica" class="content">
+                <h2>Política</h2>
+                <article>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Notícia Política">
+                    <h3>Notícias do Governo, Congresso e STF</h3>
+                    <p class="date">Publicado em <time datetime="2024-08-06">6 de agosto de 2024</time></p>
+                    <p>Leia as últimas notícias sobre política no Brasil! Reportagens do dia a dia do governo,
+                        congresso, STF e mais, sempre atualizadas.
+                    </p>
+                    <a href="https://www.cnnbrasil.com.br/politica/" target="_blank">Leia Mais</a>
+                </article>
+                <article>
+                    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/08/53909258727_78ce792ba9_c.jpg?w=799&h=565&crop=1&quality=50/800x400"
+                        alt="Notícia Política">
+                    <h3>Inteligência artificial</h3>
+                    <p class="date">Publicado em <time datetime="2024-08-05">5 de agosto de 2024</time></p>
+                    <p>marco regulatório ajudará a dar segurança a investimentos, diz Padilha</p>
+                    <a href="https://www.cnnbrasil.com.br/politica/padilha-marco-regulatorio-da-inteligencia-artificial-ajudara-a-dar-seguranca-a-investimentos/"
+                        target="_blank">Leia Mais</a>
+                </article>
+            </section>
+
+            <section id="esportes" class="content">
+                <h2>Esportes</h2>
+                <article>
+                    <img src="https://s2-ge.glbimg.com/bB0iuLhL7y0a8qATeFY9MycCPeM=/0x0:4984x3536/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/x/q/o17aiOQKWzUJgNAMpRhA/000-36bm9my.jpg"
+                        alt="Notícia Esportiva">
+                    <h3>Hora da revanche</h3>
+                    <p class="date">Publicado em <time datetime="2024-08-04">4 de agosto de 2024</time></p>
+                    <p>
+                        Brasil reencontra EUA na final do futebol feminino: confira horário e todos os detalhes da
+                        partida que pode dar último ouro ao país nos Jogos</p>
+                    <a href="https://ge.globo.com/olimpiadas/noticia/2024/08/10/brasil-x-eua-no-futebol-feminino-das-olimpiadas-onde-assistir-a-final-e-horario.ghtml"
+                        target="_blank">Leia Mais</a>
+                </article>
+                <article>
+                    <img src="https://s2-ge.glbimg.com/zvko2n26EhcLPiGGfCpuw9hGXSs=/0x0:1024x683/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/Q/7/Ns0kPGS5SPDbOANnxmFA/gettyimages-2166080011.jpg"
+                        alt="Notícia Esportiva">
+                    <h3>Pódio do salto triplo tem três atletas nascidos em Cuba que representam outros países</h3>
+                    <p class="date">Publicado em <time datetime="2024-08-03">3 de agosto de 2024</time></p>
+                    <p>Curiosidade envolve Jordan Diaz, Pedro Pichardo e Andy Diaz, que defendem Espanha, Portugal e
+                        Itália, respectivamente, nas Olimpíadas</p>
+                    <a href="https://ge.globo.com/olimpiadas/noticia/2024/08/09/podio-do-salto-triplo-tem-tres-atletas-nascidos-em-cuba-que-representam-outros-paises.ghtml"
+                        target="_blank">Leia Mais</a>
+                </article>
+            </section>
+
+            <section id="entretenimento" class="content">
+                <h2>Entretenimento</h2>
+                <article>
+                    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/02/anitta-mangueira.png?w=1220&h=674&crop=1&quality=50"
+                        alt="Notícia de Entretenimento">
+                    <h3>Anitta se inspira em Olimpíada e anuncia tema de seus shows de Carnaval de 2025o</h3>
+                    <p class="date">Publicado em <time datetime="2024-08-02">2 de agosto de 2024</time></p>
+                    <p>Cantora que homenageou as escolas de samba em seus eventos de 2024 irá abordar modalidades
+                        esportivas nos próximos eventos</p>
+                    <a href="https://www.cnnbrasil.com.br/entretenimento/anitta-se-inspira-em-olimpiada-e-anuncia-tema-de-seus-shows-de-carnaval-de-2025/"
+                        target="_blank">Leia Mais</a>
+                </article>
+                <article>
+                    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/07/dulce-maria-rbd-e1720790345831.jpg?w=1220&h=674&crop=1&quality=50"
+                        alt="Notícia de Entretenimento">
+                    <h3>Dulce María diz duvidar que uma nova reunião do RBD aconteça</h3>
+                    <p class="date">Publicado em <time datetime="2024-08-01">1 de agosto de 2024</time></p>
+                    <p>A cantora e atriz Dulce María, famosa por interpretar o papel de Roberta na novela mexicana
+                        “Rebelde”, deu a entender que não acredita na possibilidade de uma nova reunião do grupo RBD</p>
+                    <a href="https://www.cnnbrasil.com.br/entretenimento/dulce-maria-diz-duvidar-que-uma-nova-reuniao-do-rbd-aconteca/"
+                        target="_blank">Leia Mais</a>
+                </article>
+            </section>
+
+            <aside>
+                <h3>Notícias Populares</h3>
+                <ul>
+                    <li><a href="#politica"> Política</a></li>
+                    <li><a href="#esportes"> Esportes</a></li>
+                    <li><a href="#entretenimento"> Entretenimento</a></li>
+                </ul>
+                <h3>Artigos Recomendados</h3>
+                <ul>
+                    <li><a href="#readmore1">Recomendado</a></li>
+                    <li><a href="#readmore2">Recomendado</a></li>
+                    <li><a href="#readmore3">Recomendado</a></li>
+                </ul>
+            </aside>
+        </main>
+
+        <section class="highlight">
+            <h2>Notícias em Destaque</h2>
+            <article>
+                <h3>Emendas Pix: suspensão não vai atrapalhar votação de projetos prioritários, diz Padilha</h3>
+                <p>O ministro das Relações Institucionais, Alexandre Padilha, afirmou que a suspensão das emendas Pix
+                    não vai atrapalhar as votações de projetos prioritários no Congresso.
+
+                </p>
+            </article>
+            <article>
+                <h3>Queda de avião em Vinhedo: PF envia especialistas em identificação de vítimas de desastres</h3>
+                <p>A Polícia Federal (PF) enviou de Brasília para Vinhedo (SP) peritos criminais federais especializados
+                    em acidentes aeronáuticos, identificação de vítimas de desastres e locais de crimes de grande
+                    complexidade.</p>
+            </article>
+        </section>
+
+        <h3>Eventos Futuros</h3>
+        <table class="zebra-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Evento</th>
+                    <th>Local</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12/08/2024</td>
+                    <td>Conferência de Tecnologia</td>
+                    <td>São Paulo</td>
+                </tr>
+                <tr>
+                    <td>20/08/2024</td>
+                    <td>Festival de Música</td>
+                    <td>Rio de Janeiro</td>
+                </tr>
+                <tr>
+                    <td>30/08/2024</td>
+                    <td>Feira de Livros</td>
+                    <td>Brasília</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 BDN Basil. Todos os direitos reservados.</p>
+        <p><a href="#">Sobre Nós</a> | <a href="#">Contato</a> | <a href="#">Termos de Uso</a> | <a href="#">Política de
+                Privacidade</a></p>
+        <p>Email: vitorsilvaalexande@gmail.com | Telefone: (69) 1234-5678</p>
+        <p>
+            Siga-nos nas redes sociais:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+</body>
+
+</html>
